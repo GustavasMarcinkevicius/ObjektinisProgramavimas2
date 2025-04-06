@@ -97,7 +97,7 @@ string vardas, pavarde;
     if(StrategijosPasirinkimas == 1){
         for (auto& studentas : studentai) {
             if (Rusiavimas == 3) { 
-                if (studentas.getGalutinisBalasVidurkis() >= 5) { // Use getter for GalutinisBalasVidurkis
+                if (studentas.getGalutinisBalasVidurkis() >= 5) {
                     kietekai.push_back(studentas);
                 } else {
                     vargsiukai.push_back(studentas); 

@@ -341,7 +341,7 @@ if (StrategijosPasirinkimas == 2){
 }
 
 else if (StrukturosPasirinkimas == 2){
-    // SuListais(StrategijosPasirinkimas);
+    SuListais(StrategijosPasirinkimas);
 }
 
 else if (StrukturosPasirinkimas == 3){

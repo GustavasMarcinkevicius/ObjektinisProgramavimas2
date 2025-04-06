@@ -35,15 +35,17 @@ void SuListais(int StrategijosPasirinkimas){
         std::istringstream lineStream(line);
         Studentas naujasStudentas;
 
-        lineStream >> naujasStudentas.vardas >> naujasStudentas.pavarde;
+        string vardas, pavarde;
+        lineStream >> vardas >> pavarde;  
+        naujasStudentas.setVardas(vardas); 
+        naujasStudentas.setPavarde(pavarde);
         int pazymys;
         while (lineStream >> pazymys) {
-            naujasStudentas.pazymiai.push_back(pazymys);
+            naujasStudentas.getPazymiai().push_back(pazymys);
         }
-
-        naujasStudentas.egzaminoPazimys = naujasStudentas.pazymiai.back();
-        naujasStudentas.pazymiai.pop_back(); 
-
+int examGrade = naujasStudentas.getPazymiai().back();
+naujasStudentas.setEgzaminoPazimys(examGrade);
+naujasStudentas.getPazymiai().pop_back();
         studentai.push_back(naujasStudentas);
     }
 
@@ -56,17 +58,18 @@ void SuListais(int StrategijosPasirinkimas){
 
     for  (auto& studentas : studentai) {
         double Vidurkis = 0, Mediana = 0;
-         studentas.GalutinisBalasVidurkis = 0, studentas.GalutinisBalasMediana = 0;
+        studentas.setGalutinisBalasVidurkis(0);
+        studentas.setGalutinisBalasMediana(0);
 
-        for (int pazymys : studentas.pazymiai) {
+        for (int pazymys : studentas.getPazymiai()) {
             Vidurkis += pazymys;
         }
 
-        if (!studentas.pazymiai.empty()) {
-            Vidurkis /= studentas.pazymiai.size();
+        if (!studentas.getPazymiai().empty()) {
+            Vidurkis /= studentas.getPazymiai().size();
         }
 
-        std::vector<int> sortedPazymiai = studentas.pazymiai;
+        std::vector<int> sortedPazymiai = studentas.getPazymiai();
         sort(sortedPazymiai.begin(), sortedPazymiai.end());
 
         if (!sortedPazymiai.empty()) {
@@ -77,9 +80,9 @@ void SuListais(int StrategijosPasirinkimas){
                 Mediana = sortedPazymiai[n / 2];
             }
         }
-
-        studentas.GalutinisBalasMediana = 0.4 * Mediana + 0.6 * studentas.egzaminoPazimys;
-        studentas.GalutinisBalasVidurkis = 0.4 * Vidurkis + 0.6 * studentas.egzaminoPazimys;
+       
+        studentas.setGalutinisBalasMediana(0.4 * Mediana + 0.6 * studentas.getEgzaminoPazimys()); 
+        studentas.setGalutinisBalasVidurkis(0.4 * Vidurkis + 0.6 * studentas.getEgzaminoPazimys()); 
     }; 
     
     sortStudentaiList(studentai, Rusiavimas);
@@ -94,13 +97,13 @@ if(StrategijosPasirinkimas == 1){
 
     for  (auto& studentas : studentai) {
         if (Rusiavimas == 3) { 
-            if (studentas.GalutinisBalasVidurkis >= 5) {
+            if (studentas.getGalutinisBalasVidurkis() >= 5) {
                 kietekai.push_back(studentas);
             } else {
                 vargsiukai.push_back(studentas); 
             }
         } else if (Rusiavimas == 4) {  
-            if (studentas.GalutinisBalasMediana >= 5) {
+            if (studentas.getGalutinisBalasMediana() >= 5) {
                 kietekai.push_back(studentas);  
             } else {
                 vargsiukai.push_back(studentas);
@@ -114,7 +117,7 @@ if(StrategijosPasirinkimas == 1){
 else if (StrategijosPasirinkimas == 2){
         if (Rusiavimas == 3) {
             for (auto it = studentai.begin(); it != studentai.end(); ) {
-            if (it->GalutinisBalasVidurkis < 5) {
+            if (it->getGalutinisBalasVidurkis() < 5) {
                 vargsiukai.push_back(*it);
                 it = studentai.erase(it);  
             } else {
@@ -124,7 +127,7 @@ else if (StrategijosPasirinkimas == 2){
         }
         if (Rusiavimas == 4) {
             for (auto it = studentai.begin(); it != studentai.end(); ) {
-            if (it->GalutinisBalasMediana < 5) {
+            if (it->getGalutinisBalasMediana() < 5) {
                 vargsiukai.push_back(*it);
                 it = studentai.erase(it);  
             } else {
@@ -163,10 +166,10 @@ else if (StrategijosPasirinkimas == 2){
 if (StrategijosPasirinkimas == 1){
 
     for (const auto& studentas : kietekai) {
-        OutputFile1 << left << setw(20) << studentas.vardas
-                   << left << setw(20) << studentas.pavarde
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasVidurkis
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasMediana
+        OutputFile1 << left << setw(20) << studentas.getVardas()
+                   << left << setw(20) << studentas.getPavarde()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasVidurkis()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasMediana()
                    << '\n';
     }
     
@@ -178,10 +181,10 @@ if (StrategijosPasirinkimas == 1){
     OutputFile2 << "Vardas              Pavarde             Galutinis (Vid.)/ Galutinis (Med.)\n";
     OutputFile2 << "--------------------------------------------------------------------------\n";
     for (const auto& studentas : vargsiukai) {
-        OutputFile2 << left << setw(20) << studentas.vardas
-                   << left << setw(20) << studentas.pavarde
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasVidurkis
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasMediana
+        OutputFile2 << left << setw(20) << studentas.getVardas()
+                   << left << setw(20) << studentas.getPavarde()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasVidurkis()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasMediana()
                    << '\n';
     }
 }
@@ -189,10 +192,10 @@ if (StrategijosPasirinkimas == 1){
 if (StrategijosPasirinkimas == 2){
 
     for (const auto& studentas : studentai) {
-        OutputFile1 << left << setw(20) << studentas.vardas
-                   << left << setw(20) << studentas.pavarde
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasVidurkis
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasMediana
+        OutputFile1 << left << setw(20) << studentas.getVardas()
+                   << left << setw(20) << studentas.getPavarde()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasVidurkis()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasMediana()
                    << '\n';
     }
     
@@ -204,10 +207,10 @@ if (StrategijosPasirinkimas == 2){
     OutputFile2 << "Vardas              Pavarde             Galutinis (Vid.)/ Galutinis (Med.)\n";
     OutputFile2 << "--------------------------------------------------------------------------\n";
     for (const auto& studentas : vargsiukai) {
-        OutputFile2 << left << setw(20) << studentas.vardas
-                   << left << setw(20) << studentas.pavarde
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasVidurkis
-                   << left << setw(18) << fixed << setprecision(2) << studentas.GalutinisBalasMediana
+        OutputFile2 << left << setw(20) << studentas.getVardas()
+                   << left << setw(20) << studentas.getPavarde()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasVidurkis()
+                   << left << setw(18) << fixed << setprecision(2) << studentas.getGalutinisBalasMediana()
                    << '\n';
     }
 }
