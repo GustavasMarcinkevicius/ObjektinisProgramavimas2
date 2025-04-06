@@ -1,4 +1,18 @@
 # ObjektinisProgramavimas
+1.1 README:
+
+![image](https://github.com/user-attachments/assets/aca65c9c-95d2-4e38-9506-5cfc84383d36)
+
+
+
+
+
+
+
+
+
+
+1.0 README:
 
 Pagrindiniai programos naudojimo aspektai:
 
