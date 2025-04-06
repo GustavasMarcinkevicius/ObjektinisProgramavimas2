@@ -1,7 +1,18 @@
 # ObjektinisProgramavimas
 1.1 README:
 
+
+Class vs Struct
+
 ![image](https://github.com/user-attachments/assets/aca65c9c-95d2-4e38-9506-5cfc84383d36)
+
+Kompiliavimo flag'ų palyginimas (greitis)
+
+![image](https://github.com/user-attachments/assets/75d7c63d-c7cc-4cc6-bdb9-ed1008372c70)
+
+Kompiliavimo flagų palyginias (dydis)
+
+![image](https://github.com/user-attachments/assets/4a77aaed-b073-4042-81ff-855cc24cc1b9)
 
 
 
