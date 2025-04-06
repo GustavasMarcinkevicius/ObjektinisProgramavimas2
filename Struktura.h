@@ -27,6 +27,8 @@ public:
     // Constructor
     Studentas() : egzaminoPazimys(0), galutinisBalasVidurkis(0), galutinisBalasMediana(0) {}
 
+    ~Studentas() {}
+
     // Getters
     string getVardas() const { return vardas; }
     string getPavarde() const { return pavarde; }
@@ -41,6 +43,7 @@ public:
     void setEgzaminoPazimys(double egzaminoPazimys) { this->egzaminoPazimys = egzaminoPazimys; }
     void setGalutinisBalasVidurkis(double balas) { galutinisBalasVidurkis = balas; }
     void setGalutinisBalasMediana(double balas) { galutinisBalasMediana = balas; }
+
 
 };
 #endif

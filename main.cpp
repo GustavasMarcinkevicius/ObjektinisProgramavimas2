@@ -140,21 +140,19 @@ naujasStudentas.getPazymiai().pop_back();
 
     for (auto& studentas : studentai) {
         double Vidurkis = 0, Mediana = 0;
-        // Reset final grades to 0 using setter methods
         studentas.setGalutinisBalasVidurkis(0);
         studentas.setGalutinisBalasMediana(0);
     
-        // Calculate average grade
-        for (int pazymys : studentas.getPazymiai()) { // Use getter for pazymiai
-            Vidurkis += pazymys;
+      
+        for (int pazymys : studentas.getPazymiai()) {
         }
     
         if (!studentas.getPazymiai().empty()) {
             Vidurkis /= studentas.getPazymiai().size();
         }
     
-        // Calculate median
-        vector<int> sortedPazymiai = studentas.getPazymiai(); // Use getter for pazymiai
+   
+        vector<int> sortedPazymiai = studentas.getPazymiai(); 
         sort(sortedPazymiai.begin(), sortedPazymiai.end());
     
         if (!sortedPazymiai.empty()) {
@@ -165,10 +163,10 @@ naujasStudentas.getPazymiai().pop_back();
                 Mediana = sortedPazymiai[n / 2];
             }
         }
-    
-        // Set final grades using setter methods
-        studentas.setGalutinisBalasMediana(0.4 * Mediana + 0.6 * studentas.getEgzaminoPazimys()); // Use getter for exam grade
-        studentas.setGalutinisBalasVidurkis(0.4 * Vidurkis + 0.6 * studentas.getEgzaminoPazimys()); // Use getter for exam grade
+
+       
+        studentas.setGalutinisBalasMediana(0.4 * Mediana + 0.6 * studentas.getEgzaminoPazimys()); 
+        studentas.setGalutinisBalasVidurkis(0.4 * Vidurkis + 0.6 * studentas.getEgzaminoPazimys()); 
     }
    
     sortStudentai(studentai, Rusiavimas, 1);
@@ -189,7 +187,7 @@ if(StrategijosPasirinkimas == 1){
                 vargsiukai.push_back(studentas); 
             }
         } else if (Rusiavimas == 4) {  
-            if (studentas.getGalutinisBalasMediana() >= 5) { // Use getter for GalutinisBalasMediana
+            if (studentas.getGalutinisBalasMediana() >= 5) {
                 kietekai.push_back(studentas);  
             } else {
                 vargsiukai.push_back(studentas);
@@ -197,7 +195,6 @@ if(StrategijosPasirinkimas == 1){
         }
     }
     
-    // Shrink the vectors to release unused memory
     studentai.shrink_to_fit();
     kietekai.shrink_to_fit();
     vargsiukai.shrink_to_fit();
@@ -207,10 +204,10 @@ if (StrategijosPasirinkimas == 3) {
     auto partition_point = studentai.begin();
     if (Rusiavimas == 3) {
         partition_point = std::stable_partition(studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) { return studentas.getGalutinisBalasVidurkis() >= 5; }); // Use getter for GalutinisBalasVidurkis
+            [](const Studentas& studentas) { return studentas.getGalutinisBalasVidurkis() >= 5; }); 
     } else if (Rusiavimas == 4) {
         partition_point = std::stable_partition(studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) { return studentas.getGalutinisBalasMediana() >= 5; }); // Use getter for GalutinisBalasMediana
+            [](const Studentas& studentas) { return studentas.getGalutinisBalasMediana() >= 5; }); 
     }
 
     
@@ -348,7 +345,7 @@ else if (StrukturosPasirinkimas == 2){
 }
 
 else if (StrukturosPasirinkimas == 3){
-    // SuDeque(StrategijosPasirinkimas);
+    SuDeque(StrategijosPasirinkimas);
 }
 
             break;
