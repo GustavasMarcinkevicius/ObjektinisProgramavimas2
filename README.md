@@ -1,6 +1,6 @@
 # ObjektinisProgramavimas
 
-1v2 README:
+v1.2 README:
 
 Studentas klasę galima rasti "Struktura.h" faile
 
