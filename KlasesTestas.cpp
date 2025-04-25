@@ -73,7 +73,7 @@ void testMoveAssignment() {
     std::cout << "Move assignment testas sekmingas!\n";
 }
 
-int main() {
+int v12KlasesTestas() {
     testDefaultConstructor();
     testSettersAndGetters();
     testCopyConstructor();
@@ -83,4 +83,15 @@ int main() {
     
     std::cout << "\nAll tests passed!\n";
     return 0;
+};
+
+int v15KlasesTestas() {
+    Zmogus zmogus;           
+
+    return 0;
+}
+
+
+int main() {
+    v12KlasesTestas();
 }
