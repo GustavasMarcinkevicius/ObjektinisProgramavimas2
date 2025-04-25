@@ -99,7 +99,7 @@ class Studentas : public Zmogus {
         void setGalutinisBalasVidurkis(double balas) { galutinisBalasVidurkis = balas; }
         void setGalutinisBalasMediana(double balas) { galutinisBalasMediana = balas; }
     
-        // Overriding readFromConsole from Zmogus
+       
         void readFromConsole() override {
             pazymiai.clear();
             cout << "Vardas: ";
@@ -116,7 +116,7 @@ class Studentas : public Zmogus {
             cin >> egzaminoPazimys;
         }
     
-        // Overriding print from Zmogus
+     
         void print() const override {
             cout << left << setw(20) << vardas 
                  << setw(20) << pavarde
