@@ -86,7 +86,7 @@ int v12KlasesTestas() {
 };
 
 int v15KlasesTestas() {
-    // Zmogus zmogus;           
+    Zmogus zmogus;           
 
     return 0;
 }
