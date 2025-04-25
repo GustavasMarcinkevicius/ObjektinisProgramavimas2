@@ -15,35 +15,79 @@ using std::vector;
 using namespace std;
 
 class Studentas {
-private:
-    string vardas;
-    string pavarde;
-    vector<int> pazymiai;
-    double egzaminoPazimys;
-    double galutinisBalasVidurkis;
-    double galutinisBalasMediana;
+    private:
+        std::string vardas;
+        std::string pavarde;
+        std::vector<int> pazymiai;
+        double egzaminoPazimys = 0;
+        double galutinisBalasVidurkis = 0;
+        double galutinisBalasMediana = 0;
+    
+    public:
+        // Default constructor
+        Studentas() = default;
+    
+        // Destructor
+        ~Studentas() = default;
+    
+        // Copy constructor
+        Studentas(const Studentas& other)
+            : vardas(other.vardas),
+              pavarde(other.pavarde),
+              pazymiai(other.pazymiai),
+              egzaminoPazimys(other.egzaminoPazimys),
+              galutinisBalasVidurkis(other.galutinisBalasVidurkis),
+              galutinisBalasMediana(other.galutinisBalasMediana) {}
+    
+        // Copy assignment operator
+        Studentas& operator=(const Studentas& other) {
+            if (this != &other) {
+                vardas = other.vardas;
+                pavarde = other.pavarde;
+                pazymiai = other.pazymiai;
+                egzaminoPazimys = other.egzaminoPazimys;
+                galutinisBalasVidurkis = other.galutinisBalasVidurkis;
+                galutinisBalasMediana = other.galutinisBalasMediana;
+            }
+            return *this;
+        }
+    
+        // Move constructor
+        Studentas(Studentas&& other) noexcept
+            : vardas(std::move(other.vardas)),
+              pavarde(std::move(other.pavarde)),
+              pazymiai(std::move(other.pazymiai)),
+              egzaminoPazimys(other.egzaminoPazimys),
+              galutinisBalasVidurkis(other.galutinisBalasVidurkis),
+              galutinisBalasMediana(other.galutinisBalasMediana) {}
+    
+        // Move assignment operator
+        Studentas& operator=(Studentas&& other) noexcept {
+            if (this != &other) {
+                vardas = std::move(other.vardas);
+                pavarde = std::move(other.pavarde);
+                pazymiai = std::move(other.pazymiai);
+                egzaminoPazimys = other.egzaminoPazimys;
+                galutinisBalasVidurkis = other.galutinisBalasVidurkis;
+                galutinisBalasMediana = other.galutinisBalasMediana;
+            }
+            return *this;
+        }
+    
+        // Getters
+        std::string getVardas() const { return vardas; }
+        std::string getPavarde() const { return pavarde; }
+        std::vector<int>& getPazymiai() { return pazymiai; }
+        double getEgzaminoPazimys() const { return egzaminoPazimys; }
+        double getGalutinisBalasVidurkis() const { return galutinisBalasVidurkis; }
+        double getGalutinisBalasMediana() const { return galutinisBalasMediana; }
+    
+        // Setters
+        void setVardas(const std::string& v) { vardas = v; }
+        void setPavarde(const std::string& p) { pavarde = p; }
+        void setEgzaminoPazimys(double egzaminoPazimys) { this->egzaminoPazimys = egzaminoPazimys; }
+        void setGalutinisBalasVidurkis(double balas) { galutinisBalasVidurkis = balas; }
+        void setGalutinisBalasMediana(double balas) { galutinisBalasMediana = balas; }
+    };
 
-public:
-    // Constructor
-    Studentas() : egzaminoPazimys(0), galutinisBalasVidurkis(0), galutinisBalasMediana(0) {}
-
-    ~Studentas() {}
-
-    // Getters
-    string getVardas() const { return vardas; }
-    string getPavarde() const { return pavarde; }
-    vector<int>& getPazymiai() { return pazymiai; }
-    double getEgzaminoPazimys() const { return egzaminoPazimys; }
-    double getGalutinisBalasVidurkis() const { return galutinisBalasVidurkis; }
-    double getGalutinisBalasMediana() const { return galutinisBalasMediana; }
-
-    // Setters
-    void setVardas(const string& v) { vardas = v; }
-    void setPavarde(const string& p) { pavarde = p; }
-    void setEgzaminoPazimys(double egzaminoPazimys) { this->egzaminoPazimys = egzaminoPazimys; }
-    void setGalutinisBalasVidurkis(double balas) { galutinisBalasVidurkis = balas; }
-    void setGalutinisBalasMediana(double balas) { galutinisBalasMediana = balas; }
-
-
-};
 #endif
