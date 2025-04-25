@@ -1,4 +1,33 @@
 # ObjektinisProgramavimas
+v1.5 README: 
+
+Klases Studentas testas:
+
+![image](https://github.com/user-attachments/assets/0e788b2b-31b4-4817-87a3-9a00958c9d47)
+
+Abstrakcios klases zmogus testas:
+
+![image](https://github.com/user-attachments/assets/7fbefaa8-909b-4665-b4ba-064f0e849504)
+
+
+v1.2 README:
+
+Studentas klasę galima rasti "Struktura.h" faile
+
+Įvestis/Išvestis iš Studentas klasės: readFromConsole metodas (Įvesties metodas iš konsolės):
+
+Pirmiausia, naudojamas std::cin norint nuskaityti studento vardą ir pavardę. Po to, vartotojas prašomas įvesti studento pažymius, kol nebus įvestas -1 (tai bus ženklas, kad įvedimas baigiasi). Galiausiai, prašoma įvesti egzamino pažymį, kuris bus paskutinis įvestas duomenų taškas.
+
+readFromFile metodas (Įvesties metodas iš failo):
+
+Šis metodas skaito informaciją iš failo. Failo struktūra turi būti tokia, kad kiekvienas studento įrašas būtų eilutėje su vardu, pavarde ir pažymiais.
+
+Veikimas:
+
+Pirmiausia, metodas nuskaitys studento vardą ir pavardę. Tada jis nuskaitys visus pažymius ir įrašys juos į pazymiai vektorių. Paskutinis nuskaitytas pažymys bus laikomas egzamino pažymiu, ir jis bus išimtas iš pažymių sąrašo (naudojant pop_back).
+
+Išvedimo operatorius <<: Šis operatorius (operator<<) naudojamas objektų Studentas duomenų išvedimui tiek į konsolę, tiek į failą. Šis operatorius priima std::ostream tipo srautą (tai gali būti tiek std::cout (konsolė), tiek std::ofstream (failas)) ir formatuoja išvedimą pagal nurodytus reikalavimus.
+
 1.1 README:
 
 
