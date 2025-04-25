@@ -24,10 +24,10 @@ class Studentas {
         double galutinisBalasMediana = 0;
     
     public:
-        // Default constructor
+        // Default constructor default
         Studentas() = default;
     
-        // Destructor
+        // Destructor default
         ~Studentas() = default;
     
         // Copy constructor
@@ -88,6 +88,7 @@ class Studentas {
         void setEgzaminoPazimys(double egzaminoPazimys) { this->egzaminoPazimys = egzaminoPazimys; }
         void setGalutinisBalasVidurkis(double balas) { galutinisBalasVidurkis = balas; }
         void setGalutinisBalasMediana(double balas) { galutinisBalasMediana = balas; }
-    };
+    
+    }; 
 
 #endif
