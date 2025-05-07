@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**", // Your project's headers
+        "C:/Users/gusta/Desktop/Objektinis Github/googletest-main/googletest/include/**" // Path to Google Test headers
+      ],
+      "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
+      "windowsSdkVersion": "10.0.22621.0",
+      "compilerPath": "cl.exe", // Keep this if you're using MSVC
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-msvc-x64",
+      "browse": {
+        "path": [
+          "C:/Users/gusta/Desktop/Objektinis Github/googletest-main/googletest/include" // Path to Google Test headers for browsing
+        ]
+      }
+    }
+  ],
+  "version": 4
+}

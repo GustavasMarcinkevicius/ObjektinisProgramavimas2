@@ -85,11 +85,11 @@ int v12KlasesTestas() {
     return 0;
 };
 
-int v15KlasesTestas() {
-    Zmogus zmogus;           
+// int v15KlasesTestas() {
+//     Zmogus zmogus;           
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 int main() {
