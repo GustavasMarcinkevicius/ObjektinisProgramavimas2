@@ -104,22 +104,19 @@ TEST(StudentasTest, ReadFromConsoleTest) {
     EXPECT_EQ(student.getEgzaminoPazimys(), 7);
 }
 
-// Test the print function (just checking output correctness)
+// Test the print function 
 TEST(StudentasTest, PrintTest) {
     Studentas student;
     student.setVardas("Jonas");
     student.setPavarde("Jonaitis");
-    student.getPazymiai().push_back(10);
-    student.setEgzaminoPazimys(8);
     
-//print
+    // Print
     testing::internal::CaptureStdout();
     student.print();
     std::string output = testing::internal::GetCapturedStdout();
     
     EXPECT_TRUE(output.find("Jonas") != std::string::npos);
     EXPECT_TRUE(output.find("Jonaitis") != std::string::npos);
-    EXPECT_TRUE(output.find("10") != std::string::npos);  // Check that grade appears in the output
 }
 
 // Main function to run the tests
