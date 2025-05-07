@@ -1,0 +1,175 @@
+\doxysection{Struktura.\+h}
+\hypertarget{_struktura_8h_source}{}\label{_struktura_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ ZMOGUS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ZMOGUS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Zmogus\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor}}
+\DoxyCodeLine{00014\ \ \ \ \ Zmogus()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Virtual\ destructor}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Zmogus()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00020\ \ \ \ \ Zmogus(\textcolor{keyword}{const}\ Zmogus\&\ other)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ vardas(other.vardas),\ pavarde(other.pavarde)\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment\ operator}}
+\DoxyCodeLine{00024\ \ \ \ \ Zmogus\&\ operator=(\textcolor{keyword}{const}\ Zmogus\&\ other)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ vardas\ =\ other.vardas;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\ =\ other.pavarde;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{00033\ \ \ \ \ Zmogus(Zmogus\&\&\ other)\ noexcept}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ :\ vardas(std::move(other.vardas)),\ pavarde(std::move(other.pavarde))\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment\ operator}}
+\DoxyCodeLine{00037\ \ \ \ \ Zmogus\&\ operator=(Zmogus\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ vardas\ =\ std::move(other.vardas);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ pavarde\ =\ std::move(other.pavarde);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readFromConsole()\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ print()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{string}\ vardas;\ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{string}\ pavarde;\ }
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ZMOGUS\_H}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifndef\ STRUKTURA\_H}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ STRUKTURA\_H}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }Studentas\ :\ \textcolor{keyword}{public}\ Zmogus\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ vector<int>\ pazymiai;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ egzaminoPazimys\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisBalasVidurkis\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisBalasMediana\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor}}
+\DoxyCodeLine{00069\ \ \ \ \ Studentas()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00072\ \ \ \ \ \string~Studentas()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00075\ \ \ \ \ Studentas(\textcolor{keyword}{const}\ Studentas\&\ other)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ :\ Zmogus(other),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ pazymiai(other.pazymiai),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ egzaminoPazimys(other.egzaminoPazimys),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ galutinisBalasVidurkis(other.galutinisBalasVidurkis),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ galutinisBalasMediana(other.galutinisBalasMediana)\ \{\}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment\ operator}}
+\DoxyCodeLine{00083\ \ \ \ \ Studentas\&\ operator=(\textcolor{keyword}{const}\ Studentas\&\ other)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(other);\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai\ =\ other.pazymiai;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ egzaminoPazimys\ =\ other.egzaminoPazimys;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisBalasVidurkis\ =\ other.galutinisBalasVidurkis;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisBalasMediana\ =\ other.galutinisBalasMediana;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor}}
+\DoxyCodeLine{00095\ \ \ \ \ Studentas(Studentas\&\&\ other)\ noexcept}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ :\ Zmogus(std::move(other)),\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ pazymiai(std::move(other.pazymiai)),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ egzaminoPazimys(other.egzaminoPazimys),}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ galutinisBalasVidurkis(other.galutinisBalasVidurkis),}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ galutinisBalasMediana(other.galutinisBalasMediana)\ \{\}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment\ operator}}
+\DoxyCodeLine{00103\ \ \ \ \ Studentas\&\ operator=(Studentas\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(std::move(other));\ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai\ =\ std::move(other.pazymiai);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ egzaminoPazimys\ =\ other.egzaminoPazimys;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisBalasVidurkis\ =\ other.galutinisBalasVidurkis;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ galutinisBalasMediana\ =\ other.galutinisBalasMediana;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{string}\ getVardas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ vardas;\ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{string}\ getPavarde()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pavarde;\ \}}
+\DoxyCodeLine{00117\ \ \ \ \ vector<int>\&\ getPazymiai()\ \{\ \textcolor{keywordflow}{return}\ pazymiai;\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ getEgzaminoPazimys()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egzaminoPazimys;\ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisBalasVidurkis()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisBalasVidurkis;\ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{double}\ getGalutinisBalasMediana()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisBalasMediana;\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ v)\ \{\ vardas\ =\ v;\ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ p)\ \{\ pavarde\ =\ p;\ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ setEgzaminoPazimys(\textcolor{keywordtype}{double}\ egzaminoPazimys)\ \{\ this-\/>egzaminoPazimys\ =\ egzaminoPazimys;\ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ setGalutinisBalasVidurkis(\textcolor{keywordtype}{double}\ balas)\ \{\ galutinisBalasVidurkis\ =\ balas;\ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ setGalutinisBalasMediana(\textcolor{keywordtype}{double}\ balas)\ \{\ galutinisBalasMediana\ =\ balas;\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//read\ from\ console}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ readFromConsole()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ pazymiai.clear();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Vardas:\ "{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ cin\ >>\ vardas;\ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pavarde:\ "{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ cin\ >>\ pavarde;\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ pazymius\ (iveskite\ -\/1\ kad\ baigti):\(\backslash\)n"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cin\ >>\ paz\ \&\&\ paz\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai.push\_back(paz);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ egzamino\ pazymi:\(\backslash\)n"{}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ cin\ >>\ egzaminoPazimys;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ from\ file}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readFromFile(istream\&\ in)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai.clear();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ vardas\ >>\ pavarde;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paz;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (in\ >>\ paz)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai.push\_back(paz);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ egzaminoPazimys\ =\ pazymiai.back();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ pazymiai.pop\_back();\ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//print}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ print()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ cout\ <<\ left\ <<\ setw(20)\ <<\ vardas\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ pavarde\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(15)\ <<\ galutinisBalasVidurkis}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(15)\ <<\ galutinisBalasMediana}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

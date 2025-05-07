@@ -1,0 +1,87 @@
+\chapter{Objektinis\+Programavimas}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{ObjektinisProgramavimas@{ObjektinisProgramavimas}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+v1.\+5 README\+:
+
+Klases \doxylink{class_studentas}{Studentas} testas\+:
+
+
+
+Abstrakcios klases zmogus testas\+:
+
+
+
+v1.\+2 README\+:
+
+\doxylink{class_studentas}{Studentas} klasę galima rasti "{}\+Struktura.\+h"{} faile
+
+Įvestis/\+Išvestis iš \doxylink{class_studentas}{Studentas} klasės\+: read\+From\+Console metodas (Įvesties metodas iš konsolės)\+:
+
+Pirmiausia, naudojamas std\+::cin norint nuskaityti studento vardą ir pavardę. Po to, vartotojas prašomas įvesti studento pažymius, kol nebus įvestas -\/1 (tai bus ženklas, kad įvedimas baigiasi). Galiausiai, prašoma įvesti egzamino pažymį, kuris bus paskutinis įvestas duomenų taškas.
+
+read\+From\+File metodas (Įvesties metodas iš failo)\+:
+
+Šis metodas skaito informaciją iš failo. Failo struktūra turi būti tokia, kad kiekvienas studento įrašas būtų eilutėje su vardu, pavarde ir pažymiais.
+
+Veikimas\+:
+
+Pirmiausia, metodas nuskaitys studento vardą ir pavardę. Tada jis nuskaitys visus pažymius ir įrašys juos į pazymiai vektorių. Paskutinis nuskaitytas pažymys bus laikomas egzamino pažymiu, ir jis bus išimtas iš pažymių sąrašo (naudojant pop\+\_\+back).
+
+Išvedimo operatorius \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\+: Šis operatorius (operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}) naudojamas objektų \doxylink{class_studentas}{Studentas} duomenų išvedimui tiek į konsolę, tiek į failą. Šis operatorius priima std\+::ostream tipo srautą (tai gali būti tiek std\+::cout (konsolė), tiek std\+::ofstream (failas)) ir formatuoja išvedimą pagal nurodytus reikalavimus.
+
+1.\+1 README\+:
+
+Class vs Struct
+
+
+
+Kompiliavimo flag\textquotesingle{}ų palyginimas (greitis)
+
+
+
+Kompiliavimo flagų palyginias (dydis)
+
+
+
+1.\+0 README\+:
+
+Pagrindiniai programos naudojimo aspektai\+:
+
+Ši programa leidžia efektyviai atlikti tam tikrus veiksmus su studentų sąrašu (juos išrūšiuoti, išsskirstyti į skirtingus failus, jiems generuoti vardus, pažymius ir pnš). Taip pat šia programa galima stebėti skirtingų konteinerių, tokių kaip vector, deque ar list veikimo efektyvumą, taip pat ir skirtingų algoritmų pritaikymą. Programa tu Make\+Lists.\+txt failą, kuris leidžia lengvai sugeneruoti naudojamą failą.
+
+Programos veikimo laikas, lyginant vector, list ir deque\+:
+
+Testavimo sistemos parametrai\+: CPU -\/ i5-\/1335u (10 cores, 12 threads, 12M Cache, up to 4.\+60 GHz)
+
+RAM -\/ DDR4 8GB, 2667 MHz
+
+DISK -\/ NVMe SSD, read speed up to 3500 MB/s, write speed up to 1625 MB/s
+
+
+
+detalūs lyginimo duomenys\+:
+
+Su vektoriais\+:
+
+    
+
+Su Listais\+:
+
+    
+
+Su Deque\+:
+
+    
+
+STRATEGIJŲ PALYGINIMAS\+:
+
+Pirma strategija -\/ Vektoriaus išskaidymas į du atskirus vektorius
+
+Antra strategija -\/ Dalis vektoriaus perkeliama į kitą, tada ištrinama iš pirmos (Dažni trynimai buvo itin skausmingi programos efektyvimui, todėl ji buvo lėčiausia)
+
+Trečia strategija -\/ Optimizuota pirma strategija
+
+ 
