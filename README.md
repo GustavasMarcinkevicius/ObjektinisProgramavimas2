@@ -1,4 +1,13 @@
 # ObjektinisProgramavimas
+v3.0 README:
+
+Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:
+
+| Vektoriaus dydis: | 10 000 | 100 000 | 1000 000 | 10 000 000 | 100 000 000 |
+|:-----------------:|--------|---------|----------|------------|-------------|
+| v1 laikas(s):     | 0.0002 | 0.0007  | 0.007    | 0.081      | 0.65        |
+| v2 laikas(s):     | 0.0002 | 0.0005  | 0.004    | 0.077      | 0.56        |
+
 v1.5 README: 
 
 Klases Studentas testas:
