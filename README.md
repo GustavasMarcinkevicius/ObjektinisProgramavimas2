@@ -8,6 +8,49 @@ Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudo
 | v1 laikas(s):     | 0.0002 | 0.0007  | 0.007    | 0.081      | 0.65        |
 | v2 laikas(s):     | 0.0002 | 0.0005  | 0.004    | 0.077      | 0.56        |
 
+kelių sukurto vektoriaus funkcijų naudojimo pavyzdžiai:  
+1. push_back(const T& value)  
+   
+🔹 Paskirtis: Prideda naują elementą į vektoriaus galą.  
+
+🔹 Kaip veikia:  
+
+Jei nebėra vietos (sz >= cap), iškviečia reallocate, kuri padidina talpą.  
+Tada nauja reikšmė įrašoma į data[sz], ir sz padidinamas.   
+v.push_back(10); // Prideda 10 į galą  
+
+2. pop_back()  
+   
+🔹 Paskirtis: Pašalina paskutinį elementą.  
+
+🔹 Kaip veikia:    
+Tiesiog sumažina sz vienetu (jei sz > 0), bet neatlaisvina atminties.   
+v.pop_back(); // Pašalina paskutinį elementą  
+
+3. resize(size_t new_size, const T& default_value = T())  
+   
+🔹 Paskirtis: Pakeičia vektoriaus dydį  .
+
+🔹 Kaip veikia:  
+Jei reikia padidinti dydį, paskirsto daugiau vietos (reserve) ir naujus elementus užpildo default_value.  
+Jei reikia sumažinti — tiesiog sumažina sz.  
+v.resize(100, 0); // Dabar vektorius turi 100 elementų, jei elementų trūko – prideda nulius  
+
+4. clear()   
+🔹 Paskirtis: Išvalo visus elementus.
+
+🔹 Kaip veikia:
+Nustato sz = 0, bet palieka cap tą patį (atmintis neišvaloma).
+v.clear(); // v.size() taps 0
+
+5. operator[](size_t index)  
+🔹 Paskirtis: Leidžia pasiekti elementą pagal indeksą kaip masyve.
+
+🔹 Kaip veikia:  
+Grąžina nuorodą į data[index], leidžia skaityti ir rašyti.  
+v[0] = 42; // Pirmas elementas bus 42  
+________________________________________________________________________________________________________________
+
 v1.5 README: 
 
 Klases Studentas testas:
