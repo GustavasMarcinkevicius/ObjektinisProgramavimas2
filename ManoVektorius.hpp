@@ -1,7 +1,7 @@
 #include "Includes.h"
 
-#ifndef MYVECTOR_HPP
-#define MYVECTOR_HPP
+#ifndef MANOVEKTORIUS_HPP
+#define MANOVEKTORIUS_HPP
 
 #include <iostream>
 
@@ -24,15 +24,15 @@ private:
 
 public:
     // Constructor
-    MyVector() : data(nullptr), sz(0), cap(0) {}
+    ManoVektorius() : data(nullptr), sz(0), cap(0) {}
 
     // Destructor
-    ~MyVector() {
+    ~ManoVektorius() {
         delete[] data;
     }
 
     // Copy constructor
-    MyVector(const MyVector& other) {
+    ManoVektorius(const ManoVektorius& other) {
         sz = other.sz;
         cap = other.cap;
         data = new T[cap];
@@ -42,7 +42,7 @@ public:
     }
 
     // Copy assignment
-    MyVector& operator=(const MyVector& other) {
+    ManoVektorius& operator=(const ManoVektorius& other) {
         if (this != &other) {
             delete[] data;
             sz = other.sz;
@@ -56,7 +56,7 @@ public:
     }
 
     // Move constructor
-    MyVector(MyVector&& other) noexcept {
+    ManoVektorius(ManoVektorius&& other) noexcept {
         data = other.data;
         sz = other.sz;
         cap = other.cap;
@@ -65,7 +65,7 @@ public:
     }
 
     // Move assignment
-    MyVector& operator=(MyVector&& other) noexcept {
+    ManoVektorius& operator=(ManoVektorius&& other) noexcept {
         if (this != &other) {
             delete[] data;
             data = other.data;
@@ -118,4 +118,4 @@ public:
     T* end() { return data + sz; }
 };
 
-#endif // MYVECTOR_HPP
+#endif // MANOVEKTORIUS_HPP
