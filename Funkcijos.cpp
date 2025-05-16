@@ -1,5 +1,7 @@
 #include "Includes.h"
 #include "Struktura.h"
+#include <windows.h>
+#include <filesystem>
 
 int generateRandomNumber(int min, int max) {
     return rand() % (max - min + 1) + min;
@@ -121,3 +123,9 @@ void generateFile(int numStudents) {
 
     file.close();
 }
+
+// std::string getExecutableDir() {
+//     char path[MAX_PATH];
+//     GetModuleFileNameA(NULL, path, MAX_PATH);
+//     return std::filesystem::path(path).parent_path().string();
+// }

@@ -98,7 +98,8 @@ if (StrukturosPasirinkimas == 1){
     cout << "Pagal galutini pazymi (nuo Medianos) - 2" << endl;
     cin >> Rusiavimas;
     Rusiavimas = Rusiavimas+2; // +2, nes atmesti rusiavimai pagal varda ir pavarde, kurie buvo 1 ir 2
-    std::string directory = "C:\\Users\\gusta\\Desktop\\Objektinis Github\\SugeneruotiFailai";
+    // std::string directory = getExecutableDir();
+        std::string directory = "abc";
     std::string filename = directory + "\\SugeneruotiStudentai" + std::to_string(StudentuKiekis) + ".txt";
 
     namespace fs = std::filesystem;
