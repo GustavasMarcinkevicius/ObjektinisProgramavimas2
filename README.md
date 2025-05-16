@@ -11,6 +11,9 @@ Norėdami naudotis programa, ją iš pradžių reikia instaliuoti (MySetup.exe f
 ![image](https://github.com/user-attachments/assets/5e3d66d3-1263-4f81-94cd-0b083d798cca)
 
 
+Naudojimosi instrukcija:
+Iš pradžių suinstaliavus failą, jį galime paleisti paspaudę ant ,,Studentai" darbalaukyje. Norint skaityti iš failų, programa jau turi kelis pavyzdinius failus. Norint įkelti savo failus, lengviausia tai yra padaryti paspaudus dešinį klavišą ant Studentai piktogramos, tada ,,Open file location". Ten galima įkelti savo txt failus.
+
 Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:
 
 | Vektoriaus dydis: | 10 000 | 100 000 | 1000 000 | 10 000 000 | 100 000 000 |
