@@ -1,6 +1,13 @@
 #include "Includes.h"
 #include "Struktura.h"
+#ifdef NOMINMAX
+#undef NOMINMAX
+#endif
+#define NOMINMAX
+#define byte win_byte_override 
 #include <windows.h>
+#undef byte
+
 #include <filesystem>
 
 int generateRandomNumber(int min, int max) {
@@ -124,8 +131,8 @@ void generateFile(int numStudents) {
     file.close();
 }
 
-// std::string getExecutableDir() {
-//     char path[MAX_PATH];
-//     GetModuleFileNameA(NULL, path, MAX_PATH);
-//     return std::filesystem::path(path).parent_path().string();
-// }
+std::string getExecutableDir() {
+    char path[MAX_PATH];
+    GetModuleFileNameA(NULL, path, MAX_PATH);
+    return std::filesystem::path(path).parent_path().string();
+}

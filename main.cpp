@@ -98,8 +98,7 @@ if (StrukturosPasirinkimas == 1){
     cout << "Pagal galutini pazymi (nuo Medianos) - 2" << endl;
     cin >> Rusiavimas;
     Rusiavimas = Rusiavimas+2; // +2, nes atmesti rusiavimai pagal varda ir pavarde, kurie buvo 1 ir 2
-    // std::string directory = getExecutableDir();
-        std::string directory = "abc";
+    std::string directory = getExecutableDir();
     std::string filename = directory + "\\SugeneruotiStudentai" + std::to_string(StudentuKiekis) + ".txt";
 
     namespace fs = std::filesystem;
@@ -321,6 +320,9 @@ if (StrategijosPasirinkimas == 2){
     cout << StudentuKiekis << " Studentu kieteku irasymo laikas: " << KietekuLaikas.count() << " sekundes" << endl;
     cout << StudentuKiekis << " Studentu vargsiuku irasymo laikas: " << VargsiukuLaikas.count() << " sekundes" << endl;
     cout << "Visos programos veikimo laikas: " << ProgramDuration.count() << " sekundes" << endl;
+    cout << "Paspauskite Enter, kad uzdaryti programa" << endl;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cin.get(); 
 }
 
 else if (StrukturosPasirinkimas == 2){
@@ -336,5 +338,7 @@ else if (StrukturosPasirinkimas == 3){
 
     };
     
+
 return 0;
+
 }

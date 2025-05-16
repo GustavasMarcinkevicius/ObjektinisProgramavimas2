@@ -32,7 +32,7 @@ using std::fixed;
 
 
 int generateRandomNumber(int min, int max);
-// string getExecutableDir();
+string getExecutableDir();
 string generateRandomName();
 string generateRandomSurname();
 void ApskaiciuotiVeikimoLaikoVidurki();
