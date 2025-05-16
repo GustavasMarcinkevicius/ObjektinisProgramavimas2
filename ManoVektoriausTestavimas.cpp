@@ -6,7 +6,7 @@ int main(){
 // Pradėti v1 užpildymo laiko matavimą
 
 std::chrono::high_resolution_clock::time_point MatavimoPradzia = std::chrono::high_resolution_clock::now();
-unsigned int sz = 10000; // 100000, 1000000, 10000000, 100000000
+unsigned int sz = 100000000; // 10000, 100000, 1000000, 10000000, 100 000 000
 
  
 
