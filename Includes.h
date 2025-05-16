@@ -17,6 +17,7 @@
 #include "Struktura.h"
 #include <list>
 #include <deque>
+#include "ManoVektorius.hpp"
 
 using std::cout;
 using std::string;
@@ -35,8 +36,7 @@ string generateRandomName();
 string generateRandomSurname();
 void ApskaiciuotiVeikimoLaikoVidurki();
 template <typename Container>
-void sortStudentai(Container& studentai, int RusiavimoPasirinkimas, int DuomenuKiekis = 0);
-void generateFile(int numStudents);
+void sortStudentai(Container& studentai, int RusiavimoPasirinkimas, int DuomenuKiekis = 0);void generateFile(int numStudents);
 void runDinaminiaiMasyvai(); 
 void WithRandomNumbers();
 void GenerateRandomNumbersAndNames();

@@ -1,5 +1,6 @@
 #include "Struktura.h"
 #include "Includes.h"
+#include "ManoVektorius.hpp"
 
 
 
@@ -87,7 +88,7 @@ if (StrukturosPasirinkimas == 1){
     int StudentuKiekis;
     int Rusiavimas;
     std::ostringstream output;
-    vector<Studentas> studentai;
+    ManoVektorius<Studentas> studentai;
     vector<Studentas> kietekai;  
     vector<Studentas> vargsiukai;  
 

@@ -36,6 +36,15 @@ public:
     using const_iterator         = const T*;
     using reverse_iterator       = std::reverse_iterator<iterator>;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+    
+iterator begin() { return data; }
+iterator end() { return data + sz; }
+
+const_iterator begin() const { return data; }
+const_iterator end() const { return data + sz; }
+
+const_iterator cbegin() const { return data; }
+const_iterator cend() const { return data + sz; }
 
     // ITERATOR VALIDATION
     void swap(ManoVektorius& other) {
@@ -54,14 +63,17 @@ public:
         if (new_cap > cap)
             reallocate(new_cap);
     }
-void erase(size_t index) {
+iterator erase(iterator pos) {
+    size_t index = pos - data;
     if (index >= sz) throw std::out_of_range("Nera tokio elemento trinimui!");
+
     data[index].~T();
     for (size_t i = index; i < sz - 1; ++i) {
         new (&data[i]) T(std::move(data[i + 1]));
         data[i + 1].~T();
     }
     --sz;
+    return data + index;
 }
 void push_back(const T& value) {
     if (sz >= cap) {
@@ -144,19 +156,6 @@ void assign_range(InputIt first, InputIt last) {
 std::allocator<T> get_allocator() const {
     return std::allocator<T>();
 }
-    // Copy assignment
-    ManoVektorius& operator=(const ManoVektorius& other) {
-        if (this != &other) {
-            delete[] data;
-            sz = other.sz;
-            cap = other.cap;
-            data = new T[cap];
-            for (size_t i = 0; i < sz; ++i) {
-                data[i] = other.data[i];
-            }
-        }
-        return *this;
-    }
 
     // Move constructor
     ManoVektorius(ManoVektorius&& other) noexcept {
@@ -206,7 +205,7 @@ T& back() {
 
 
 // Get pointer to underlying array 
-T* data() {
+T* data_() {
     return data;
 }
 
@@ -228,7 +227,7 @@ const T& back() const {
     return data[sz - 1];
 }
 
-const T* data_() const {
+const T* raw_data() const {
     return data;
 }
 

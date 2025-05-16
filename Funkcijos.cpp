@@ -65,7 +65,7 @@ void sortStudentai(Container& studentai, int RusiavimoPasirinkimas, int DuomenuK
         });
     }
 }
-
+template void sortStudentai<ManoVektorius<Studentas>>(ManoVektorius<Studentas>& studentai, int RusiavimoPasirinkimas, int DuomenuKiekis);
 template void sortStudentai<std::vector<Studentas>>(std::vector<Studentas>& studentai, int RusiavimoPasirinkimas, int DuomenuKiekis);
 template void sortStudentai<std::deque<Studentas>>(std::deque<Studentas>& studentai, int RusiavimoPasirinkimas, int DuomenuKiekis);
 
