@@ -1,6 +1,8 @@
 # ObjektinisProgramavimas
 v3.0 README:
 
+Instaliacijos instrukcija (TODO):
+
 Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:
 
 | Vektoriaus dydis: | 10 000 | 100 000 | 1000 000 | 10 000 000 | 100 000 000 |
