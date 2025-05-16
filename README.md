@@ -12,6 +12,7 @@ Norėdami naudotis programa, ją iš pradžių reikia instaliuoti (MySetup.exe f
 
 
 Naudojimosi instrukcija:
+
 Iš pradžių suinstaliavus failą, jį galime paleisti paspaudę ant ,,Studentai" darbalaukyje. Norint skaityti iš failų, programa jau turi kelis pavyzdinius failus. Norint įkelti savo failus, lengviausia tai yra padaryti paspaudus dešinį klavišą ant Studentai piktogramos, tada ,,Open file location". Ten galima įkelti savo txt failus.
 
 Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:
