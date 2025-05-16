@@ -1,0 +1,44 @@
+\doxysection{Catch\+::Reporter\+Spec Class Reference}
+\hypertarget{class_catch_1_1_reporter_spec}{}\label{class_catch_1_1_reporter_spec}\index{Catch::ReporterSpec@{Catch::ReporterSpec}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_aac26108d5319d5522dc4da69c85ef78f}\label{class_catch_1_1_reporter_spec_aac26108d5319d5522dc4da69c85ef78f} 
+{\bfseries Reporter\+Spec} (std\+::string name, \mbox{\hyperlink{class_catch_1_1_optional}{Optional}}$<$ std\+::string $>$ output\+File\+Name, \mbox{\hyperlink{class_catch_1_1_optional}{Optional}}$<$ \mbox{\hyperlink{catch__amalgamated_8hpp_a91308e87521e370e591065a22b010025}{Colour\+Mode}} $>$ colour\+Mode, std\+::map$<$ std\+::string, std\+::string $>$ custom\+Options)
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a8767d90584b1feaccb75d157045c5e7a}\label{class_catch_1_1_reporter_spec_a8767d90584b1feaccb75d157045c5e7a} 
+std\+::string const \& {\bfseries name} () const
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a80f4deef91e481a8cf33780cac44aa98}\label{class_catch_1_1_reporter_spec_a80f4deef91e481a8cf33780cac44aa98} 
+\mbox{\hyperlink{class_catch_1_1_optional}{Optional}}$<$ std\+::string $>$ const \& {\bfseries output\+File} () const
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a0371ae20e7e8589beb12a5e3be964f3d}\label{class_catch_1_1_reporter_spec_a0371ae20e7e8589beb12a5e3be964f3d} 
+\mbox{\hyperlink{class_catch_1_1_optional}{Optional}}$<$ \mbox{\hyperlink{catch__amalgamated_8hpp_a91308e87521e370e591065a22b010025}{Colour\+Mode}} $>$ const \& {\bfseries colour\+Mode} () const
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a6ffea7ca24daf1d8d1b64e434b61dcc0}\label{class_catch_1_1_reporter_spec_a6ffea7ca24daf1d8d1b64e434b61dcc0} 
+std\+::map$<$ std\+::string, std\+::string $>$ const \& {\bfseries custom\+Options} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a5ed5c5634c667d64dfc4a18a9534404b}\label{class_catch_1_1_reporter_spec_a5ed5c5634c667d64dfc4a18a9534404b} 
+bool {\bfseries operator==} (\mbox{\hyperlink{class_catch_1_1_reporter_spec}{Reporter\+Spec}} const \&lhs, \mbox{\hyperlink{class_catch_1_1_reporter_spec}{Reporter\+Spec}} const \&rhs)
+\item 
+\Hypertarget{class_catch_1_1_reporter_spec_a71b0055588d164144557dbdfcc529ed4}\label{class_catch_1_1_reporter_spec_a71b0055588d164144557dbdfcc529ed4} 
+bool {\bfseries operator!=} (\mbox{\hyperlink{class_catch_1_1_reporter_spec}{Reporter\+Spec}} const \&lhs, \mbox{\hyperlink{class_catch_1_1_reporter_spec}{Reporter\+Spec}} const \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structured reporter spec that a reporter can be created from
+
+Parsing has been validated, but semantics have not. This means e.\+g. that the colour mode is known to Catch2, but it might not be compiled into the binary, and the output filename might not be openable. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\doxysection{Catch\+::Test\+Spec Class Reference}
+\hypertarget{class_catch_1_1_test_spec}{}\label{class_catch_1_1_test_spec}\index{Catch::TestSpec@{Catch::TestSpec}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_catch_1_1_test_spec_1_1_filter_match}{Filter\+Match}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_catch_1_1_test_spec_a06b08ac127c37d48a4353f34bf20c0e3}\label{class_catch_1_1_test_spec_a06b08ac127c37d48a4353f34bf20c0e3} 
+using {\bfseries Matches} = std\+::vector$<$\mbox{\hyperlink{struct_catch_1_1_test_spec_1_1_filter_match}{Filter\+Match}}$>$
+\item 
+\Hypertarget{class_catch_1_1_test_spec_a8fca1c29ab3a21ea943f724ab0ecce08}\label{class_catch_1_1_test_spec_a8fca1c29ab3a21ea943f724ab0ecce08} 
+using {\bfseries vector\+Strings} = std\+::vector$<$std\+::string$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_catch_1_1_test_spec_ac6d69b4a19677d95e46af0467fc72ecd}\label{class_catch_1_1_test_spec_ac6d69b4a19677d95e46af0467fc72ecd} 
+bool {\bfseries has\+Filters} () const
+\item 
+\Hypertarget{class_catch_1_1_test_spec_a2342df9eff2c7db0d26432c1ddef796f}\label{class_catch_1_1_test_spec_a2342df9eff2c7db0d26432c1ddef796f} 
+bool {\bfseries matches} (\mbox{\hyperlink{struct_catch_1_1_test_case_info}{Test\+Case\+Info}} const \&test\+Case) const
+\item 
+\Hypertarget{class_catch_1_1_test_spec_ae62a33926c9c2c3ab5b6f27a9e7aa484}\label{class_catch_1_1_test_spec_ae62a33926c9c2c3ab5b6f27a9e7aa484} 
+Matches {\bfseries matches\+By\+Filter} (std\+::vector$<$ \mbox{\hyperlink{class_catch_1_1_test_case_handle}{Test\+Case\+Handle}} $>$ const \&test\+Cases, \mbox{\hyperlink{class_catch_1_1_i_config}{IConfig}} const \&config) const
+\item 
+\Hypertarget{class_catch_1_1_test_spec_ae6af81e7e267ae9a374d3f4ce0f9b88a}\label{class_catch_1_1_test_spec_ae6af81e7e267ae9a374d3f4ce0f9b88a} 
+const vector\+Strings \& {\bfseries get\+Invalid\+Specs} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_catch_1_1_test_spec_a8b4fea0f5a37c5ef447eddceacf113a7}\label{class_catch_1_1_test_spec_a8b4fea0f5a37c5ef447eddceacf113a7} 
+class {\bfseries Test\+Spec\+Parser}
+\item 
+\Hypertarget{class_catch_1_1_test_spec_a2e48bf00322a3a2f9a4a9f207d6da096}\label{class_catch_1_1_test_spec_a2e48bf00322a3a2f9a4a9f207d6da096} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \mbox{\hyperlink{class_catch_1_1_test_spec}{Test\+Spec}} const \&spec)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

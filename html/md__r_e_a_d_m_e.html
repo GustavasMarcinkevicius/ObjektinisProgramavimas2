@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OBJEKTINIS PROGRAMAVIMAS: ObjektinisProgramavimas</title>
+<title>ObjektinisProgramavimas: ObjektinisProgramavimas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OBJEKTINIS PROGRAMAVIMAS
+   <div id="projectname">ObjektinisProgramavimas
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -106,6 +106,62 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>v3.0 README:</p>
+<p>Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Vektoriaus dydis:   </th><th class="markdownTableHeadNone">10 000   </th><th class="markdownTableHeadNone">100 000   </th><th class="markdownTableHeadNone">1000 000   </th><th class="markdownTableHeadNone">10 000 000   </th><th class="markdownTableHeadNone">100 000 000    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">v1 laikas(s):   </td><td class="markdownTableBodyNone">0.0002   </td><td class="markdownTableBodyNone">0.0007   </td><td class="markdownTableBodyNone">0.007   </td><td class="markdownTableBodyNone">0.081   </td><td class="markdownTableBodyNone">0.65    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">v2 laikas(s):   </td><td class="markdownTableBodyNone">0.0002   </td><td class="markdownTableBodyNone">0.0005   </td><td class="markdownTableBodyNone">0.004   </td><td class="markdownTableBodyNone">0.077   </td><td class="markdownTableBodyNone">0.56   </td></tr>
+</table>
+<p>kelių sukurto vektoriaus funkcijų naudojimo pavyzdžiai: <br  />
+</p><ol type="1">
+<li>push_back(const T&amp; value) <br  />
+</li>
+</ol>
+<p>🔹 Paskirtis: Prideda naują elementą į vektoriaus galą. <br  />
+</p>
+<p>🔹 Kaip veikia: <br  />
+</p>
+<p>Jei nebėra vietos (sz &gt;= cap), iškviečia reallocate, kuri padidina talpą. <br  />
+ Tada nauja reikšmė įrašoma į data[sz], ir sz padidinamas. <br  />
+ v.push_back(10); // Prideda 10 į galą <br  />
+</p>
+<ol type="1">
+<li>pop_back() <br  />
+</li>
+</ol>
+<p>🔹 Paskirtis: Pašalina paskutinį elementą. <br  />
+</p>
+<p>🔹 Kaip veikia: <br  />
+ Tiesiog sumažina sz vienetu (jei sz &gt; 0), bet neatlaisvina atminties. <br  />
+ v.pop_back(); // Pašalina paskutinį elementą <br  />
+</p>
+<ol type="1">
+<li>resize(size_t new_size, const T&amp; default_value = T()) <br  />
+</li>
+</ol>
+<p>🔹 Paskirtis: Pakeičia vektoriaus dydį .</p>
+<p>🔹 Kaip veikia: <br  />
+ Jei reikia padidinti dydį, paskirsto daugiau vietos (reserve) ir naujus elementus užpildo default_value. <br  />
+ Jei reikia sumažinti — tiesiog sumažina sz. <br  />
+ v.resize(100, 0); // Dabar vektorius turi 100 elementų, jei elementų trūko – prideda nulius <br  />
+</p>
+<ol type="1">
+<li>clear() <br  />
+ 🔹 Paskirtis: Išvalo visus elementus.</li>
+</ol>
+<p>🔹 Kaip veikia: Nustato sz = 0, bet palieka cap tą patį (atmintis neišvaloma). v.clear(); // v.size() taps 0</p>
+<ol type="1">
+<li>operator[](size_t index) <br  />
+ 🔹 Paskirtis: Leidžia pasiekti elementą pagal indeksą kaip masyve.</li>
+</ol>
+<p>🔹 Kaip veikia: <br  />
+ Grąžina nuorodą į data[index], leidžia skaityti ir rašyti. <br  />
+ v[0] = 42; // Pirmas elementas bus 42 <br  />
+ </p><hr  />
 <p>v1.5 README:</p>
 <p>Klases <a class="el" href="class_studentas.html">Studentas</a> testas:</p>
 <p><img src="https://github.com/user-attachments/assets/0e788b2b-31b4-4817-87a3-9a00958c9d47" alt="image" class="inline"/></p>

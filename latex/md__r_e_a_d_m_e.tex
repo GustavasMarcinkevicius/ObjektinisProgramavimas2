@@ -4,6 +4,91 @@
 \Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
 
 
+v3.\+0 README\+:
+
+Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push\+\_\+back(i) funkcija\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Vektoriaus dydis\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Vektoriaus dydis\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000 000    }\\\cline{1-6}
+\endhead
+\PBS\centering v1 laikas(s)\+:   &0.\+0002   &0.\+0007   &0.\+007   &0.\+081   &0.\+65    \\\cline{1-6}
+\PBS\centering v2 laikas(s)\+:   &0.\+0002   &0.\+0005   &0.\+004   &0.\+077   &0.\+56   \\\cline{1-6}
+\end{longtabu}
+
+
+kelių sukurto vektoriaus funkcijų naudojimo pavyzdžiai\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item push\+\_\+back(const T\& value) ~\newline
+
+\end{DoxyEnumerate}
+
+🔹 Paskirtis\+: Prideda naują elementą į vektoriaus galą. ~\newline
+
+
+🔹 Kaip veikia\+: ~\newline
+
+
+Jei nebėra vietos (sz \texorpdfstring{$>$}{>}= cap), iškviečia reallocate, kuri padidina talpą. ~\newline
+ Tada nauja reikšmė įrašoma į data\mbox{[}sz\mbox{]}, ir sz padidinamas. ~\newline
+ v.\+push\+\_\+back(10); // Prideda 10 į galą ~\newline
+
+
+
+\begin{DoxyEnumerate}
+\item pop\+\_\+back() ~\newline
+
+\end{DoxyEnumerate}
+
+🔹 Paskirtis\+: Pašalina paskutinį elementą. ~\newline
+
+
+🔹 Kaip veikia\+: ~\newline
+ Tiesiog sumažina sz vienetu (jei sz \texorpdfstring{$>$}{>} 0), bet neatlaisvina atminties. ~\newline
+ v.\+pop\+\_\+back(); // Pašalina paskutinį elementą ~\newline
+
+
+
+\begin{DoxyEnumerate}
+\item resize(size\+\_\+t new\+\_\+size, const T\& default\+\_\+value = T()) ~\newline
+
+\end{DoxyEnumerate}
+
+🔹 Paskirtis\+: Pakeičia vektoriaus dydį .
+
+🔹 Kaip veikia\+: ~\newline
+ Jei reikia padidinti dydį, paskirsto daugiau vietos (reserve) ir naujus elementus užpildo default\+\_\+value. ~\newline
+ Jei reikia sumažinti — tiesiog sumažina sz. ~\newline
+ v.\+resize(100, 0); // Dabar vektorius turi 100 elementų, jei elementų trūko – prideda nulius ~\newline
+
+
+
+\begin{DoxyEnumerate}
+\item clear() ~\newline
+ 🔹 Paskirtis\+: Išvalo visus elementus.
+\end{DoxyEnumerate}
+
+🔹 Kaip veikia\+: Nustato sz = 0, bet palieka cap tą patį (atmintis neišvaloma). v.\+clear(); // v.\+size() taps 0
+
+
+\begin{DoxyEnumerate}
+\item operator\mbox{[}$\,$\mbox{]}(size\+\_\+t index) ~\newline
+ 🔹 Paskirtis\+: Leidžia pasiekti elementą pagal indeksą kaip masyve.
+\end{DoxyEnumerate}
+
+🔹 Kaip veikia\+: ~\newline
+ Grąžina nuorodą į data\mbox{[}index\mbox{]}, leidžia skaityti ir rašyti. ~\newline
+ v\mbox{[}0\mbox{]} = 42; // Pirmas elementas bus 42 ~\newline
+ \DoxyHorRuler{0}
+
+
 v1.\+5 README\+:
 
 Klases \doxylink{class_studentas}{Studentas} testas\+:

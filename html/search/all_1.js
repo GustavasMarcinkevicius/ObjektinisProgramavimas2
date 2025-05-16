@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['studentas_0',['Studentas',['../class_studentas.html',1,'']]],
-  ['studentasmasyvas_1',['StudentasMasyvas',['../struct_studentas_masyvas.html',1,'']]]
+  ['objektinisprogramavimas_0',['ObjektinisProgramavimas',['../md__r_e_a_d_m_e.html',1,'']]]
 ];
