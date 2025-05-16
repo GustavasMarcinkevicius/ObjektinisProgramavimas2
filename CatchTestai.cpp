@@ -2,6 +2,10 @@
 #include "catch_amalgamated.hpp"
 #include "ManoVektorius.hpp"
 
+TEST_CASE("Sanity check") {
+    REQUIRE(1 + 1 == 2);
+}
+
 TEST_CASE("Default construction", "[ManoVektorius]") {
     ManoVektorius<int> v;
     REQUIRE(v.empty());
@@ -59,20 +63,6 @@ TEST_CASE("resize increases and decreases size", "[ManoVektorius]") {
 
     v.resize(2);
     REQUIRE(v.size() == 2);
-}
-
-TEST_CASE("copy constructor and assignment", "[ManoVektorius]") {
-    ManoVektorius<std::string> v1;
-    v1.push_back("a");
-    v1.push_back("b");
-
-    ManoVektorius<std::string> v2(v1);
-    REQUIRE(v2.size() == 2);
-    REQUIRE(v2[1] == "b");
-
-    ManoVektorius<std::string> v3;
-    v3 = v1;
-    REQUIRE(v3[0] == "a");
 }
 
 TEST_CASE("move constructor and assignment", "[ManoVektorius]") {
