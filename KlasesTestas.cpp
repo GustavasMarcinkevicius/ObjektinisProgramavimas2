@@ -62,17 +62,28 @@ void testCopyAssignment() {
     assert(s2.getPavarde() == "Kebabas");
     std::cout << "Copy assignment testas sekmingas!\n";
 }
-
 void testMoveAssignment() {
     Studentas s1;
+    s1.setVardas("Jonas");
     s1.setPavarde("Moved");
-    
+    s1.getPazymiai().push_back(8);
+    s1.getPazymiai().push_back(9);
+    s1.setEgzaminoPazimys(7.5);
+    s1.setGalutinisBalasVidurkis(8.5);
+    s1.setGalutinisBalasMediana(8.0);
+
     Studentas s2;
     s2 = std::move(s1);
+
+    assert(s2.getVardas() == "Jonas");
     assert(s2.getPavarde() == "Moved");
+    assert((s2.getPazymiai() == std::vector<int>{8, 9}));
+    assert(s2.getEgzaminoPazimys() == 7.5);
+    assert(s2.getGalutinisBalasVidurkis() == 8.5);
+    assert(s2.getGalutinisBalasMediana() == 8.0);
+
     std::cout << "Move assignment testas sekmingas!\n";
 }
-
 int main() {
     testDefaultConstructor();
     testSettersAndGetters();

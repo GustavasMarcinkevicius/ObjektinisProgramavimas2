@@ -19,11 +19,17 @@ private:
     double galutinisBalasMediana = 0;
 
 public:
-    // Default constructor default
-    Studentas() = default;
+    // Constructor
+    Studentas() : egzaminoPazimys(0), galutinisBalasVidurkis(0), galutinisBalasMediana(0) {}
 
-    // Destructor default
-    ~Studentas() = default;
+  ~Studentas() {
+
+    pazymiai.clear();
+
+    egzaminoPazimys = 0;
+    galutinisBalasVidurkis = 0;
+    galutinisBalasMediana = 0;
+}
 
     // Copy constructor
     Studentas(const Studentas& other)
@@ -47,27 +53,37 @@ public:
         return *this;
     }
 
-    // Move constructor
-    Studentas(Studentas&& other) noexcept
-        : vardas(std::move(other.vardas)),
-          pavarde(std::move(other.pavarde)),
-          pazymiai(std::move(other.pazymiai)),
-          egzaminoPazimys(other.egzaminoPazimys),
-          galutinisBalasVidurkis(other.galutinisBalasVidurkis),
-          galutinisBalasMediana(other.galutinisBalasMediana) {}
+// Move constructor
+Studentas(Studentas&& other) noexcept
+    : vardas(std::move(other.vardas)),
+      pavarde(std::move(other.pavarde)),
+      pazymiai(std::move(other.pazymiai)),
+      egzaminoPazimys(other.egzaminoPazimys),
+      galutinisBalasVidurkis(other.galutinisBalasVidurkis),
+      galutinisBalasMediana(other.galutinisBalasMediana)
+{
+    other.egzaminoPazimys = 0;
+    other.galutinisBalasVidurkis = 0;
+    other.galutinisBalasMediana = 0;
+}
 
-    // Move assignment operator
-    Studentas& operator=(Studentas&& other) noexcept {
-        if (this != &other) {
-            vardas = std::move(other.vardas);
-            pavarde = std::move(other.pavarde);
-            pazymiai = std::move(other.pazymiai);
-            egzaminoPazimys = other.egzaminoPazimys;
-            galutinisBalasVidurkis = other.galutinisBalasVidurkis;
-            galutinisBalasMediana = other.galutinisBalasMediana;
-        }
-        return *this;
+// Move assignment operator
+Studentas& operator=(Studentas&& other) noexcept {
+    if (this != &other) {
+        vardas = std::move(other.vardas);
+        pavarde = std::move(other.pavarde);
+        pazymiai = std::move(other.pazymiai);
+
+        egzaminoPazimys = other.egzaminoPazimys;
+        galutinisBalasVidurkis = other.galutinisBalasVidurkis;
+        galutinisBalasMediana = other.galutinisBalasMediana;
+
+        other.egzaminoPazimys = 0;
+        other.galutinisBalasVidurkis = 0;
+        other.galutinisBalasMediana = 0;
     }
+    return *this;
+}
 
     // Getters
     string getVardas() const { return vardas; }
