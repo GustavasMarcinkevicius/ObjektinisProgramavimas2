@@ -27,7 +27,14 @@ public:
     // Constructor
     Studentas() : egzaminoPazimys(0), galutinisBalasVidurkis(0), galutinisBalasMediana(0) {}
 
-    ~Studentas() {}
+  ~Studentas() {
+
+    pazymiai.clear();
+
+    egzaminoPazimys = 0;
+    galutinisBalasVidurkis = 0;
+    galutinisBalasMediana = 0;
+}
 
     // Getters
     string getVardas() const { return vardas; }
