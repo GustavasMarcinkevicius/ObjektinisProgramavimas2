@@ -41,15 +41,25 @@ void testCopyConstructor() {
     assert(copy.getPazymiai()[0] == 10);
     std::cout << "Copy konstruktoriaus testas sekmingas!\n";
 }
-
 void testMoveConstructor() {
     Studentas temp;
     temp.setVardas("Move");
+    temp.setPavarde("Test");
     temp.getPazymiai().push_back(7);
-    
+    temp.getPazymiai().push_back(9);
+    temp.setEgzaminoPazimys(8.0);
+    temp.setGalutinisBalasVidurkis(7.5);
+    temp.setGalutinisBalasMediana(7.0);
+
     Studentas moved(std::move(temp));
+
     assert(moved.getVardas() == "Move");
-    assert(moved.getPazymiai()[0] == 7);
+    assert(moved.getPavarde() == "Test");
+    assert((moved.getPazymiai() == std::vector<int>{7, 9}));
+    assert(moved.getEgzaminoPazimys() == 8.0);
+    assert(moved.getGalutinisBalasVidurkis() == 7.5);
+    assert(moved.getGalutinisBalasMediana() == 7.0);
+
     std::cout << "Move konstruktoriaus testas sekmingas!\n";
 }
 
@@ -65,11 +75,24 @@ void testCopyAssignment() {
 
 void testMoveAssignment() {
     Studentas s1;
+    s1.setVardas("Jonas");
     s1.setPavarde("Moved");
-    
+    s1.getPazymiai().push_back(8);
+    s1.getPazymiai().push_back(9);
+    s1.setEgzaminoPazimys(7.5);
+    s1.setGalutinisBalasVidurkis(8.5);
+    s1.setGalutinisBalasMediana(8.0);
+
     Studentas s2;
     s2 = std::move(s1);
+
+    assert(s2.getVardas() == "Jonas");
     assert(s2.getPavarde() == "Moved");
+    assert((s2.getPazymiai() == std::vector<int>{8, 9}));
+    assert(s2.getEgzaminoPazimys() == 7.5);
+    assert(s2.getGalutinisBalasVidurkis() == 8.5);
+    assert(s2.getGalutinisBalasMediana() == 8.0);
+
     std::cout << "Move assignment testas sekmingas!\n";
 }
 
@@ -85,11 +108,11 @@ int v12KlasesTestas() {
     return 0;
 };
 
-int v15KlasesTestas() {
-    Zmogus zmogus;           
+// int v15KlasesTestas() {
+//     Zmogus zmogus;           
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 int main() {
