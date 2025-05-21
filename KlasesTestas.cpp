@@ -45,11 +45,22 @@ void testCopyConstructor() {
 void testMoveConstructor() {
     Studentas temp;
     temp.setVardas("Move");
+    temp.setPavarde("Test");
     temp.getPazymiai().push_back(7);
-    
+    temp.getPazymiai().push_back(9);
+    temp.setEgzaminoPazimys(8.0);
+    temp.setGalutinisBalasVidurkis(7.5);
+    temp.setGalutinisBalasMediana(7.0);
+
     Studentas moved(std::move(temp));
+
     assert(moved.getVardas() == "Move");
-    assert(moved.getPazymiai()[0] == 7);
+    assert(moved.getPavarde() == "Test");
+    assert((moved.getPazymiai() == std::vector<int>{7, 9}));
+    assert(moved.getEgzaminoPazimys() == 8.0);
+    assert(moved.getGalutinisBalasVidurkis() == 7.5);
+    assert(moved.getGalutinisBalasMediana() == 7.0);
+
     std::cout << "Move konstruktoriaus testas sekmingas!\n";
 }
 
