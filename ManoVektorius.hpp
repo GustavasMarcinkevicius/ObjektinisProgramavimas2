@@ -108,6 +108,32 @@ void pop_back() {
     // Constructor
     ManoVektorius() : data(nullptr), sz(0), cap(0) {}
 
+    ManoVektorius(size_t n, const T& value = T()) {
+    sz = n;
+    cap = n;
+    data = new T[cap];
+    for (size_t i = 0; i < sz; ++i)
+        data[i] = value;
+}
+
+ManoVektorius(std::initializer_list<T> init) {
+    sz = init.size();
+    cap = sz;
+    data = new T[cap];
+    size_t i = 0;
+    for (const auto& elem : init) {
+        data[i++] = elem;
+    }
+}
+
+ManoVektorius(const T* arr, size_t n) {
+    sz = cap = n;
+    data = new T[cap];
+    for (size_t i = 0; i < n; ++i) {
+        data[i] = arr[i];
+    }
+}
+
     // Destructor
 ~ManoVektorius() {
     for (size_t i = 0; i < sz; ++i) {
