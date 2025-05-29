@@ -1,7 +1,19 @@
 # ObjektinisProgramavimas
 v3.0 README:
 
-Instaliacijos instrukcija (TODO):
+Instaliacijos instrukcija:    
+Norėdami naudotis programa, ją iš pradžių reikia instaliuoti (MySetup.exe failas). Instaliacija yra įprasta, labai siūloma palikti varnelę "create dekstop shrotcut" pažymėtą, tuomet programa naudotis bus žymiai lengviau. Norint programą išinstaliuoti, reikia nueiti į "C:\Program Files\VU\Gustavas-Marcinkevicius" (jeigu keitėte instaliacijos direktoriją, tai tenais), ir paspausti uninstall.exe failą.
+
+(šią varnelę paliktį pažymėtą)     
+![image](https://github.com/user-attachments/assets/e03f353c-27a3-43b9-aa57-a27ab3ff6e21)
+
+(norint išinstaliuoti programą:)     
+![image](https://github.com/user-attachments/assets/5e3d66d3-1263-4f81-94cd-0b083d798cca)
+
+
+Naudojimosi instrukcija:
+
+Iš pradžių suinstaliavus failą, jį galime paleisti paspaudę ant ,,Studentai" darbalaukyje. Norint skaityti iš failų, programa jau turi kelis pavyzdinius failus. Norint įkelti savo failus, lengviausia tai yra padaryti paspaudus dešinį klavišą ant Studentai piktogramos, tada ,,Open file location". Ten galima įkelti savo txt failus.
 
 Paprasto vektoriaus (v1) ir mano sukurto vektoriaus (v2) testavimo laikai, naudojant push_back(i) funkcija:
 
